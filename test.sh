@@ -20,4 +20,10 @@ if [ "$expected" = "$actual" ]; then
 	echo -e "\e[32mTests passed\e[0m"
 else
 	echo -e "\e[31mTests failed\e[0m"
+  echo "-------Expected--------"
+  echo "$expected"
+  echo "-----------------------"
+  echo "-------Actual----------"
+  ./a.out < ./test.txt
+  echo "-----------------------"
 fi
