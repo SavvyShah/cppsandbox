@@ -3,6 +3,12 @@ import sys
 import subprocess
 from pathlib import Path
 
+def printError(line):
+  print("\033[91m{}\033[00m\n".format(line))
+
+def printSuccess(line):
+  print("\033[92m{}\033[00m\n".format(line))
+
 solution_path = Path("solution.txt")
 test_path = Path("test.txt")
 
@@ -15,10 +21,11 @@ if not test_path.exists():
   sys.exit()
 
 first = "main.cpp"
-try:
+second = ""
+if len(sys.argv) > 1:
   first = sys.argv[1]
-except:
-  first = "main.cpp"
+if len(sys.argv) > 2:
+  second = sys.argv[2]
 
 solution_file = open("solution.txt", "r")
 test_file = open("test.txt", "r")
@@ -37,9 +44,9 @@ if actual.stderr:
   sys.exit()
 
 if expected == actual.stdout:
-  print("Tests passed\n")
+  printSuccess("Tests passed")
 else:
-  print("Tests failed\n")
+  printError("Tests failed")
   print("-------Expected--------")
   print(expected)
   print("-------Actual----------")
