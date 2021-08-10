@@ -1,38 +1,31 @@
 #include <bits/stdc++.h>
+#include "solution.h"
 using namespace std;
 
-//edit code below this line
-class Solution{
-  public:
-    bool solution(int n){
-      if(n % 2 == 0){
-        return true;
-      }else{
-        return false;
-      }
-    }
-};
+//<-----------------------Edit below this line------------------------------------------->
 
-typedef int test;
-typedef bool solution;
-constexpr int N = 5; //No of tests
+using input = int; //Change the type of your input
+using output = bool; //Change the type of your output
 
-vector<test> tests{1, 2, 3, 4, 5};
-vector<solution> solutions{false, true, false, true, false};
-//edit code above this line
+//Custom tests and their corresponding answers as an array. 
+//Eg. The below tests for the even numbers. 1 -> false, 2 -> true, and so on.
+vector<input> inputArr{1, 2, 3, 4, 5};
+vector<output> answers{false, true, false, true, false};
+
+//<-----------------------Edit above this line------------------------------------------->
 
 int main() {
 	Solution s;
 
-	for (int i{0}; i < tests.size(); i++)
+	for (int i{0}; i < inputArr.size(); i++)
 	{
-		solution output{s.solution(tests[i])};
+		output processedAnswer{s.solution(inputArr[i])};
 
-		if(output != solutions[i]){
+		if(processedAnswer != answers[i]){
 			cout << "Test failed" << "\n";
 			cout << "Test number" << i << "\n";
-			cout << "Output" << output << "\n";
-			cout << "Expected" << solutions[i] << "\n";
+			cout << "Output" << processedAnswer << "\n";
+			cout << "Expected" << answers[i] << "\n";
 			return 0;
 		} 
 	}
