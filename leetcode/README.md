@@ -1,4 +1,13 @@
+## Requirements
+- Linux OS
+- Cmake
+- g++
+
+## Installation
+- Run `sh install.sh`
+
 ## Usage
+### General
 - Edit solution.h accoding to guidelines
 - Edit main.cpp accoding to guidelines
 - Run `sh correct.sh` to check the correctness of code
