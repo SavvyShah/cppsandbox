@@ -27,8 +27,8 @@ if len(sys.argv) > 1:
 if len(sys.argv) > 2:
   second = sys.argv[2]
 
-solution_file = open("solution.txt", "r")
-test_file = open("test.txt", "r")
+solution_file = open("solution.txt", "r", encoding="utf-8")
+test_file = open("test.txt", "r", encoding="utf-8")
 
 test = test_file.read()
 expected = solution_file.read()
