@@ -2,17 +2,29 @@
 
 using namespace std;
 
+class Solution{
+	string& s;
+public:
+	Solution(string& str): s{str}{
+	}
+	string reverseString(){
+		reverse(s.begin(), s.end());
+		return s;
+	}
+};
+
+
+
 int main() {
-	int x, y;
-	string s;
-	cin >> x;
-	cin >> y;
-	//cin would currently be at a \n character so flush that.
-	//This is useful when using getline
-	cin >> ws;
-	//getline is needed to read strings as input
-	getline(cin, s);
-	cout << x + y << "\n";
-	cout << x + y + 1 << "\n";
-	cout << s << '\n';
+	int t; //no. of test cases
+	cin >> t;
+	for(int i = 0; i < t; i++){
+		string s;
+		//Necessary to use getline. cin would be currently at \n and the below removes that whitespace(ws)
+		cin >> ws;
+		getline(cin, s);
+		Solution sol{Solution(s)};
+
+		cout << sol.reverseString() << '\n';
+	}
 }
