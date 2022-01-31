@@ -21,10 +21,6 @@ int main()
 {
 	int t; //no. of test cases
 	cin >> t;
-	while (true)
-	{
-		continue;
-	}
 	for (int i = 0; i < t; i++)
 	{
 		string s;
