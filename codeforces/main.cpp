@@ -2,23 +2,27 @@
 
 using namespace std;
 
-class Solution{
-	string& s;
+class Solution
+{
+	string &s;
+
 public:
-	Solution(string& str): s{str}{
+	Solution(string &str) : s{str}
+	{
 	}
-	string reverseString(){
+	string reverseString()
+	{
 		reverse(s.begin(), s.end());
 		return s;
 	}
 };
 
-
-
-int main() {
+int main()
+{
 	int t; //no. of test cases
 	cin >> t;
-	for(int i = 0; i < t; i++){
+	for (int i = 0; i < t; i++)
+	{
 		string s;
 		//Necessary to use getline. cin would be currently at \n and the below removes that whitespace(ws)
 		cin >> ws;
